@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html lang="ru" class="hidden-scrollbar">
+<html lang="ru" class="custom-scrollbar">
   @@include("../blocks/modules/head/head.html")
   <body>
     @@include("../blocks/modules/header/header.html")
     <main class="page">
-      @@include("../blocks/modules/start-section/start-section.html")
+      <section class="page-section start-window">
+        <div class="container">
+          <h1 class="start-window__title">Комплект АйТи</h1>
+          <div class="start-window__wrapper">
+            <div class="start-window__decor"></div>
+            <div class="start-window__decor"></div>
+            <div class="start-window__decor"></div>
+            <div class="start-window__subtext">
+              Ведущая компания, предоставляющая высококачественные <br />
+              услуги в области web и мобильной разработки
+            </div>
+            <div class="start-window__image">
+              <img src="./img/start-image.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      @@include("../blocks/modules/about-section/about-section.html")
+      <!--       @@include("../blocks/modules/start-section/start-section.html")
       @@include("../blocks/modules/company-section/company-section.html")
       @@include("../blocks/modules/services-section/services-section.html")
       @@include("../blocks/modules/technology-section/technology-section.html")
       @@include("../blocks/modules/why-section/why-section.html")
       @@include("../blocks/modules/team-section/team-section.html")
-      <!-- @@include("../blocks/modules/reviews-section/reviews-section.html") -->
+      @@include("../blocks/modules/reviews-section/reviews-section.html") -->
     </main>
 
-    @@include("../blocks/modules/footer/footer.html") @@include("../blocks/modules/popups/popups.html")
+    @@include("../blocks/modules/footer/footer.html")
+    <!-- @@include("../blocks/modules/popups/popups.html") -->
     @@include("../blocks/modules/scripts/scripts.html")
   </body>
 </html>

@@ -1,7 +1,7 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+/* import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; */
 
-gsap.registerPlugin(ScrollTrigger);
+/* gsap.registerPlugin(ScrollTrigger);
 
 const header = document.querySelector('.header');
 const headerMobile = header.querySelector('.header__mobile-wrapper');
@@ -32,16 +32,16 @@ function setActiveLink(id) {
     const currentLinks = document.querySelectorAll(`a[href^="#${id}"]`);
     currentLinks.forEach((item) => item.classList.add('is-active'));
   }
-}
+} */
 
-setTimeout(() => {
+/* setTimeout(() => {
   siteSections.forEach((el) => {
     gsap.to(el, {
       scrollTrigger: {
         trigger: el,
         start: 'top bottom',
         end: `bottom bottom`,
-        /* markers: true, */
+        markers: true,
         onEnter: () => {
           setActiveLink(el.id);
         },
@@ -51,4 +51,4 @@ setTimeout(() => {
       },
     });
   });
-}, 0);
+}, 0); */

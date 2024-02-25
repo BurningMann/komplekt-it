@@ -1,7 +1,7 @@
-import Lenis from '@studio-freight/lenis';
+/* import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'; */
 
 /* import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules'; */
@@ -41,6 +41,12 @@ const isMobile =
 if (isMobile) {
   document.querySelector('html').classList.add('is-mobile');
 }
+
+const buttonsArrows = document.querySelectorAll('.button__arrow');
+buttonsArrows.forEach((el) => {
+  const arrow = el.querySelector('svg');
+  el.appendChild(arrow.cloneNode(true));
+});
 
 /* Проверка ширины экрана */
 /* function checkInnerWidth(width) {
@@ -130,7 +136,7 @@ var pictureObserver = lozad('.lozad', {
   threshold: 0.1
 })
 pictureObserver.observe() */
-gsap.registerPlugin(ScrollTrigger);
+/* gsap.registerPlugin(ScrollTrigger);
 
 window.startLenis = () => {
   console.log('start');
@@ -157,10 +163,10 @@ window.stopLenis = () => {
 
 setTimeout(() => {
   window.startLenis();
-}, 0);
+}, 0); */
 
 /* navigation */
-const navLinks = document.querySelectorAll('.js-navigate-link');
+/* const navLinks = document.querySelectorAll('.js-navigate-link');
 navLinks.forEach((el) => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
@@ -171,15 +177,15 @@ navLinks.forEach((el) => {
     window.lenis.scrollTo(target, { offset });
   });
 });
-
+ */
 /* Start fansybox */
-Fancybox.bind('[data-fancybox]', {
+/* Fancybox.bind('[data-fancybox]', {
   Hash: false,
-});
+}); */
 
 /* Start phone mask */
 
-import { MaskInput } from 'maska';
+/* import { MaskInput } from 'maska';
 
 (() => {
   const maskList = [
@@ -255,11 +261,11 @@ import { MaskInput } from 'maska';
         .forEach((el) => el.classList.remove('is-active'));
     }
   });
-})();
+})(); */
 
 /* file input */
 
-(() => {
+/* (() => {
   const inputs = document.querySelectorAll('.file-input');
   inputs.forEach((el) => {
     const input = el.querySelector('input');
@@ -283,6 +289,6 @@ import { MaskInput } from 'maska';
       }
     });
   });
-})();
+})(); */
 import './import/modules';
 import './import/components';
