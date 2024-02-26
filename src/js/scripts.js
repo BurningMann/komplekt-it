@@ -48,6 +48,31 @@ buttonsArrows.forEach((el) => {
   el.appendChild(arrow.cloneNode(true));
 });
 
+/* Accordion */
+
+(() => {
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  accordionItems.forEach((el) => {
+    const header = el.querySelector('.accordion-item__header');
+    const content = el.querySelector('.accordion-item__content');
+    header.addEventListener('click', () => {
+      if (header.classList.contains('is-active')) {
+        content.classList.remove('is-active');
+        header.classList.remove('is-active');
+        setTimeout(() => {
+          content.style.maxHeight = '0';
+        }, 0);
+      } else {
+        header.classList.add('is-active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        setTimeout(() => {
+          content.classList.add('is-active');
+        }, 300);
+      }
+    });
+  });
+})();
+
 /* Проверка ширины экрана */
 /* function checkInnerWidth(width) {
   if (window.innerWidth <= width) {

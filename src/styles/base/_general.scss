@@ -541,6 +541,15 @@ h2,
 .page-section {
   margin-bottom: var(--section-magrgin);
 
+  &__wrapper {
+    display: grid;
+    gap: 4rem;
+
+    &.w-sidebar {
+      grid-template-columns: 0.4fr 0.6fr;
+    }
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -549,6 +558,7 @@ h2,
 .section-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 5rem;
 
   @media screen and (max-width: $sm) {
@@ -646,6 +656,91 @@ h2,
     }
   }
 } */
+
+.accordion {
+  border-top: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.accordion-item {
+  &__button {
+    flex-shrink: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: url(../img/accordion-arrow.svg) center no-repeat;
+    background-size: 3.2rem 1.8rem;
+    transition: 0.3s;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 4rem;
+    padding: 2rem 3rem 2rem 0;
+    position: relative;
+    overflow: hidden;
+
+    &-text {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    sup {
+      font-size: 2rem;
+      color: #b0b0b0;
+      line-height: 80%;
+      width: 3rem;
+      display: block;
+    }
+
+    &.is-active {
+      .accordion-item__button {
+        transform: translate(0, -50%) rotate(-180deg);
+      }
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    transition: 0.3s;
+    max-height: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+
+    &.is-active {
+      max-height: initial !important;
+    }
+
+    &-inner {
+      padding: 0 0 0 3rem;
+      padding-bottom: 2rem;
+      width: 100%;
+      display: flex;
+      gap: 4rem;
+    }
+
+    &-info {
+      width: 100%;
+      max-width: 70rem;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.64px;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 120%;
+    }
+
+    &-image {
+      width: 33rem;
+      aspect-ratio: 167 / 107;
+      overflow: hidden;
+      border-radius: 4rem;
+    }
+  }
+}
 
 .start-window {
   &__title {

@@ -1,0 +1,12 @@
+.service-section {
+  .page-section__sidebar {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__image {
+    max-width: 52rem;
+    border-radius: 4rem;
+    overflow: hidden;
+  }
+}
