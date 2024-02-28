@@ -3,6 +3,10 @@
     display: grid;
     grid-template-columns: 0.3fr 0.5fr 0.2fr;
     gap: 3rem;
+
+    @media screen and (max-width: $lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .project-card {

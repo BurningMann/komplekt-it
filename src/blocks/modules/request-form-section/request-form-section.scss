@@ -1,0 +1,21 @@
+.request-section {
+  .page-section__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .page-section__sidebar {
+    width: 100%;
+    max-width: 70rem;
+    flex-shrink: 0;
+  }
+
+  &__img {
+    max-width: 88.5rem;
+    height: 53rem;
+    width: 100%;
+    border-radius: 4rem;
+    overflow: hidden;
+  }
+}

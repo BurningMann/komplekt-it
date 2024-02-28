@@ -6,6 +6,18 @@
   --section-magrgin: 17rem;
 }
 
+@media screen and (max-width: $lg) {
+  :root {
+    --section-magrgin: 10rem;
+  }
+}
+
+@media screen and (max-width: $sm) {
+  :root {
+    --section-magrgin: 4rem;
+  }
+}
+
 body,
 html {
   &.noskroll {
@@ -98,6 +110,10 @@ canvas {
   margin: 0 auto;
   position: relative;
   padding: 0 6rem;
+
+  @media screen and (max-width: $lg) {
+    padding: 0 1rem;
+  }
 }
 
 .custom-scrollbar {
@@ -160,6 +176,11 @@ canvas {
   cursor: pointer;
   border: 2px solid transparent;
 
+  @media screen and (max-width: $lg) {
+    font-size: 1.6rem;
+    height: 4rem;
+  }
+
   &__arrow {
     width: 5rem;
     height: 5rem;
@@ -170,10 +191,20 @@ canvas {
     overflow: hidden;
     position: relative;
 
+    @media screen and (max-width: $lg) {
+      width: 3.8rem;
+      height: 3.8rem;
+    }
+
     svg {
       transition: 0.3s;
       width: 3.7rem;
       height: 3.6rem;
+
+      @media screen and (max-width: $lg) {
+        width: 2.7rem;
+        height: 2.6rem;
+      }
 
       &:first-child {
         position: absolute;
@@ -238,6 +269,7 @@ canvas {
 
 .form-input {
   position: relative;
+  width: 100%;
 
   &__placeholder {
     position: absolute;
@@ -247,8 +279,9 @@ canvas {
     transform: translate(0, -50%);
     color: rgba(0, 0, 0, 0.6);
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 130%;
+    letter-spacing: -0.05em;
   }
 
   &.is-required {
@@ -273,7 +306,7 @@ canvas {
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 2rem;
   line-height: 130%;
-  font-weight: 500;
+  font-weight: 400;
   height: 10rem;
   padding: 0 3.2rem;
   transition: 0.3s;
@@ -281,6 +314,7 @@ canvas {
   position: relative;
   z-index: 2;
   font-size: 3rem;
+  letter-spacing: -0.05em;
 
   @media screen and (max-width: $md) {
     &:not(.textarea) {
@@ -500,6 +534,54 @@ canvas {
   }
 }
  */
+
+h1,
+.h1 {
+  font-size: 20rem;
+  line-height: 110%;
+  letter-spacing: -0.07em;
+
+  @media screen and (max-width: $lg) {
+    font-size: 10rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 6rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 10rem;
+  line-height: 120%;
+  letter-spacing: -0.07em;
+
+  @media screen and (max-width: $lg) {
+    font-size: 6rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 4rem;
+  }
+}
+
+.sub40 {
+  font-size: 4rem;
+  line-height: 120%;
+
+  @media screen and (max-width: $lg) {
+    font-size: 3rem;
+  }
+
+  @media screen and (max-width: $md) {
+    font-size: 2.6rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 2rem;
+  }
+}
+
 .sub20 {
   font-size: 2rem;
   line-height: 110%;
@@ -507,35 +589,6 @@ canvas {
   @media screen and (max-width: $sm) {
     font-size: 1.8rem;
   }
-}
-
-h1,
-.h1 {
-  font-size: 20rem;
-  line-height: 110%;
-
-  /*   @media screen and (max-width: $sm) {
-    font-size: 2.2rem;
-  } */
-}
-
-h2,
-.h2 {
-  font-size: 10rem;
-  line-height: 120%;
-
-  /*   @media screen and (max-width: $lg) {
-    font-size: 4.8rem;
-  }
-
-  @media screen and (max-width: $sm) {
-    font-size: 4rem;
-  } */
-}
-
-.sub40 {
-  font-size: 4rem;
-  line-height: 120%;
 }
 
 .page-section {
@@ -547,7 +600,17 @@ h2,
 
     &.w-sidebar {
       grid-template-columns: 0.4fr 0.6fr;
+
+      @media screen and (max-width: $lg) {
+        grid-template-columns: 1fr;
+      }
     }
+  }
+
+  &__swiper-button-box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 
   &:last-child {
@@ -569,6 +632,7 @@ h2,
 .callback-form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 3rem;
 }
 
@@ -582,13 +646,20 @@ h2,
   }
 } */
 
-/* .swiper-button {
+.section-swiper-button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--c-prime);
   cursor: pointer;
+  transition: 0.3s;
+
   &.swiper-button-disabled {
-    opacity: 0.2;
-    cursor: initial;
+    background: rgba(0, 0, 0, 0.6);
   }
 }
+
+/* 
 
 .swiper-pagination-bullet {
   background: #fff;
@@ -671,8 +742,13 @@ h2,
     top: 50%;
     transform: translate(0, -50%);
     background: url(../img/accordion-arrow.svg) center no-repeat;
-    background-size: 3.2rem 1.8rem;
+    background-size: 2.4rem 1rem;
     transition: 0.3s;
+
+    @media screen and (max-width: $lg) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 
   &__header {
@@ -681,13 +757,19 @@ h2,
     justify-content: space-between;
     cursor: pointer;
     gap: 4rem;
-    padding: 2rem 3rem 2rem 0;
+    padding: 2rem 4rem 2rem 0;
     position: relative;
     overflow: hidden;
 
     &-text {
       display: flex;
       align-items: flex-start;
+
+      @media screen and (max-width: $sm) {
+        br {
+          display: none;
+        }
+      }
     }
 
     sup {
@@ -696,6 +778,12 @@ h2,
       line-height: 80%;
       width: 3rem;
       display: block;
+      flex-shrink: 0;
+
+      @media screen and (max-width: $sm) {
+        font-size: 1.6rem;
+        width: 2.2rem;
+      }
     }
 
     &.is-active {
@@ -716,11 +804,14 @@ h2,
     }
 
     &-inner {
-      padding: 0 0 0 3rem;
-      padding-bottom: 2rem;
+      padding: 0 0 2rem 3rem;
       width: 100%;
       display: flex;
       gap: 4rem;
+
+      @media screen and (max-width: $sm) {
+        padding: 0 0 2rem 2.2rem;
+      }
     }
 
     &-info {
@@ -731,6 +822,11 @@ h2,
       letter-spacing: -0.64px;
       color: rgba(0, 0, 0, 0.6);
       line-height: 120%;
+
+      @media screen and (max-width: $lg) {
+        padding-right: 3rem;
+        font-size: 1.6rem;
+      }
     }
 
     &-image {
@@ -738,6 +834,11 @@ h2,
       aspect-ratio: 167 / 107;
       overflow: hidden;
       border-radius: 4rem;
+      flex-shrink: 0;
+
+      @media screen and (max-width: $lg) {
+        display: none;
+      }
     }
   }
 }
@@ -754,6 +855,11 @@ h2,
     justify-content: flex-end;
     margin-bottom: 5rem;
     line-height: 120%;
+
+    @media screen and (max-width: $lg) {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 
   &__wrapper {
@@ -770,6 +876,11 @@ h2,
 
   &__decor {
     z-index: 10;
+
+    @media screen and (max-width: $lg) {
+      display: none;
+    }
+
     &:nth-child(1) {
       position: absolute;
       left: 0;
