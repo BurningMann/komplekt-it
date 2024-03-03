@@ -7,42 +7,48 @@
     @media screen and (max-width: $lg) {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    @media screen and (max-width: $md) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .project-card {
-    &:nth-child(1) {
-      .project-card__img {
-        aspect-ratio: 52 / 61;
+    @media screen and (min-width: calc($lg + 1px)) {
+      &:nth-child(1) {
+        .project-card__img {
+          aspect-ratio: 52 / 61;
+        }
+
+        .button__arrow {
+          right: 2rem;
+          top: 2rem;
+        }
       }
 
-      .button__arrow {
-        right: 2rem;
-        top: 2rem;
-      }
-    }
+      &:nth-child(2) {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
 
-    &:nth-child(2) {
-      flex-direction: column-reverse;
-      justify-content: flex-start;
+        .project-card__img {
+          aspect-ratio: 177 / 122;
+        }
 
-      .project-card__img {
-        aspect-ratio: 177 / 122;
-      }
-
-      .button__arrow {
-        left: 2rem;
-        bottom: 2rem;
-      }
-    }
-
-    &:nth-child(3) {
-      .project-card__img {
-        aspect-ratio: 47 / 48;
+        .button__arrow {
+          left: 2rem;
+          bottom: 2rem;
+        }
       }
 
-      .button__arrow {
-        right: 2rem;
-        top: 2rem;
+      &:nth-child(3) {
+        .project-card__img {
+          aspect-ratio: 47 / 48;
+        }
+
+        .button__arrow {
+          right: 2rem;
+          top: 2rem;
+        }
       }
     }
   }
@@ -52,8 +58,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: 76.5rem;
   position: relative;
+
+  @media screen and (min-width: calc($lg + 1px)) {
+    height: 76.5rem;
+  }
 
   .button__arrow {
     position: absolute;
@@ -69,6 +78,14 @@
     border-radius: 4rem;
     overflow: hidden;
     width: 100%;
+
+    @media screen and (max-width: $lg) {
+      aspect-ratio: 52 / 61;
+    }
+
+    @media screen and (max-width: $md) {
+      aspect-ratio: 177 / 122;
+    }
   }
 
   &__type {
@@ -81,5 +98,12 @@
   }
 
   &__title {
+  }
+
+  @media screen and (max-width: $lg) {
+    .button__arrow {
+      right: 2rem;
+      top: 2rem;
+    }
   }
 }

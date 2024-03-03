@@ -3,6 +3,12 @@
     width: 33.6rem;
     border-radius: 4rem;
     height: 20rem;
+
+    @media screen and (max-width: $lg) {
+      width: 22rem;
+      height: 15rem;
+      border-radius: 2rem;
+    }
   }
 
   &__card {
@@ -20,6 +26,10 @@
     filter: grayscale(1);
     transition: 0.3s;
     user-select: none;
+
+    @media screen and (max-width: $lg) {
+      border-radius: 2rem;
+    }
 
     &:hover {
       filter: grayscale(0);

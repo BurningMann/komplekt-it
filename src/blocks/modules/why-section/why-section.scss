@@ -1,0 +1,115 @@
+.why-section {
+  &__title-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20rem;
+    margin-bottom: 5rem;
+
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .h2 {
+      line-height: 50%;
+    }
+  }
+
+  &__subtext {
+    max-width: 70rem;
+  }
+
+  &__wrapper {
+    height: 44rem;
+    display: grid;
+    grid-template-columns: 1fr 34rem 1fr;
+    gap: 3rem;
+
+    @media screen and (max-width: $lg) {
+      height: auto;
+      grid-template-columns: 1fr;
+    }
+
+    @media screen and (max-width: $sm) {
+      gap: 1rem;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__image-1 {
+    border-radius: 4rem;
+    overflow: hidden;
+  }
+
+  &__area-1-content {
+    background: var(--c-graphite);
+    color: #ffffff;
+    padding: 3rem;
+    overflow: hidden;
+    border-radius: 3rem;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  &__area-2-content {
+    background: var(--c-prime);
+    height: 100%;
+    border-radius: 3rem;
+
+    @media screen and (max-width: $lg) {
+      display: none;
+    }
+  }
+
+  &__area-3-content {
+    background: var(--c-prime);
+    border-radius: 3rem;
+    position: relative;
+    height: 100%;
+
+    @media screen and (max-width: $lg) {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      right: 5rem;
+      bottom: 0;
+      width: 22rem;
+    }
+  }
+
+  &__area-4 {
+    height: 21rem;
+    display: flex;
+    gap: 3rem;
+
+    @media screen and (max-width: $lg) {
+      height: auto;
+    }
+
+    @media screen and (max-width: $sm) {
+      gap: 1rem;
+    }
+  }
+
+  &__area-4-content {
+    background: #989898;
+    color: #ffffff;
+    padding: 3rem;
+    overflow: hidden;
+    border-radius: 3rem;
+    position: relative;
+    width: 50%;
+  }
+
+  &__image-2 {
+    border-radius: 3rem;
+    overflow: hidden;
+  }
+}

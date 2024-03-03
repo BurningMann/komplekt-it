@@ -1,0 +1,133 @@
+.about-section-2 {
+  &__title-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20rem;
+    margin-bottom: 5rem;
+
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .h2 {
+      line-height: 50%;
+    }
+  }
+
+  &__subtext {
+    max-width: 70rem;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    gap: 3rem;
+    height: 80rem;
+
+    @media screen and (max-width: $lg) {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+
+    @media screen and (max-width: $sm) {
+      gap: 1rem;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media screen and (max-width: $sm) {
+      gap: 1rem;
+    }
+  }
+
+  &__image-1 {
+    border-radius: 4rem;
+    overflow: hidden;
+  }
+
+  &__area-1 {
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    gap: 3rem;
+    height: 24rem;
+
+    @media screen and (max-width: $lg) {
+      height: auto;
+    }
+
+    @media screen and (max-width: $md) {
+      grid-template-columns: 1fr;
+    }
+
+    @media screen and (max-width: $sm) {
+      gap: 1rem;
+    }
+  }
+
+  &__area-1-content {
+    background: var(--c-graphite);
+    color: #ffffff;
+    padding: 3rem;
+    overflow: hidden;
+    border-radius: 3rem;
+    position: relative;
+
+    .button__arrow {
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      background: #ffffff;
+
+      path {
+        stroke: var(--c-graphite);
+      }
+    }
+  }
+
+  &__area-2-content {
+    background: #989898;
+    color: #ffffff;
+    padding: 3rem;
+    overflow: hidden;
+    border-radius: 3rem;
+    position: relative;
+  }
+
+  &__area-3-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__area-3-content {
+    background: var(--c-prime);
+    color: #ffffff;
+    padding: 1.5rem 3rem;
+    overflow: hidden;
+    border-radius: 3rem;
+    position: relative;
+    max-width: 24rem;
+    width: 100%;
+
+    @media screen and (max-width: $md) {
+      max-width: 100%;
+    }
+  }
+
+  &__area-4-content {
+    overflow: hidden;
+    border-radius: 4rem;
+    position: relative;
+    height: 100%;
+
+    .button {
+      position: absolute;
+      right: 3rem;
+      bottom: 3rem;
+    }
+  }
+}

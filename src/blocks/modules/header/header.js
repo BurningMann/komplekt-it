@@ -1,29 +1,23 @@
-/* import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; */
+const headerBurger = document.querySelector('.header__burger');
+const headerMobile = document.querySelector('.mobile-header-sidebar');
+const menuBg = document.querySelector('.header-menu-background');
 
-/* gsap.registerPlugin(ScrollTrigger);
-
-const header = document.querySelector('.header');
-const headerMobile = header.querySelector('.header__mobile-wrapper');
-const headerMobileNav = header.querySelector('.header__mobile-wrapper-nav');
-
-headerMobile.addEventListener('click', () => {
+headerBurger.addEventListener('click', () => {
   if (headerMobile.classList.contains('is-active')) {
-    headerMobileNav.style.maxHeight = '0';
-    setTimeout(() => {
-      headerMobileNav.classList.remove('is-active');
-      headerMobile.classList.remove('is-active');
-    }, 300);
+    headerMobile.classList.remove('is-active');
+    menuBg.classList.remove('is-active');
   } else {
-    headerMobileNav.classList.add('is-active');
     headerMobile.classList.add('is-active');
-    setTimeout(() => {
-      headerMobileNav.style.maxHeight = headerMobileNav.scrollHeight + 'px';
-    }, 300);
+    menuBg.classList.add('is-active');
   }
 });
 
-const siteSections = document.querySelectorAll('.navigate-section');
+menuBg.addEventListener('click', () => {
+  headerMobile.classList.remove('is-active');
+  menuBg.classList.remove('is-active');
+});
+
+/* const siteSections = document.querySelectorAll('.navigate-section');
 function setActiveLink(id) {
   if (id) {
     const activeLinks = document.querySelectorAll('.header__link.is-active');

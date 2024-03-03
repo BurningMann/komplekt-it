@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header__wrapper">
       <div class="header__logo">Комплект АйТи</div>
-      <nav class="header__nav">
+      <nav class="header__nav netbook-hidden">
         <a href="#" class="header__link text-link">О компании</a>
         <a href="#" class="header__link text-link">Участие в тендерах</a>
         <a href="#" class="header__link text-link">Услуги</a>
@@ -30,7 +30,12 @@
             />
           </svg>
         </div>
-        <button class="button is-primary use-arrow">
+        <div class="header__burger netbook-visible">
+          <div class="header__burger-line"></div>
+          <div class="header__burger-line"></div>
+          <div class="header__burger-line"></div>
+        </div>
+        <button class="button is-primary use-arrow netbook-hidden">
           Заказать звонок
           <div class="button__arrow">
             <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,3 +58,31 @@
     </div>
   </div>
 </header>
+
+<div class="mobile-header-sidebar netbook-visible">
+  <nav class="header__nav">
+    <a href="#" class="header__link text-link">О компании</a>
+    <a href="#" class="header__link text-link">Участие в тендерах</a>
+    <a href="#" class="header__link text-link">Услуги</a>
+    <a href="#" class="header__link text-link">Цены</a>
+    <a href="#" class="header__link text-link">Портфолио</a>
+    <a href="#" class="header__link text-link">Отзывы</a>
+    <a href="#" class="header__link text-link">FAQ</a>
+  </nav>
+  <button class="button is-primary use-arrow">
+    Заказать звонок
+    <div class="button__arrow">
+      <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26.041 10.7734L11.002 25.1335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M15.4824 10.7012L26.0401 10.7722L26.1161 20.8547"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+
+<div class="header-menu-background"></div>

@@ -1,16 +1,11 @@
-// core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
-/* import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
- */
-const clientsSections = document.querySelectorAll('.clients-section');
-clientsSections.forEach((el) => {
+
+const reviewsSections = document.querySelectorAll('.reviews-section');
+reviewsSections.forEach((el) => {
   const slider = el.querySelector('.swiper');
   const swiper = new Swiper(slider, {
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     spaceBetween: 30,
     loop: false,
     modules: [Navigation, Pagination],
@@ -20,7 +15,11 @@ clientsSections.forEach((el) => {
     },
     pagination: {
       el: el.querySelector('.section-swiper__pagination'),
-      /* type: 'fraction', */
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 'auto',
+      },
     },
   });
 });
