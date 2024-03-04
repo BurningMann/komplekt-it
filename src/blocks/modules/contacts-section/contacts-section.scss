@@ -1,0 +1,13 @@
+.contacts-section {
+  &__map {
+    border-radius: 4rem;
+    overflow: hidden;
+    margin-top: 3rem;
+    height: 60rem;
+
+    @media screen and (max-width: $lg) {
+      height: 40rem;
+      border-radius: 3rem;
+    }
+  }
+}

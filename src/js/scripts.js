@@ -55,6 +55,7 @@ buttonsArrows.forEach((el) => {
   accordionItems.forEach((el) => {
     const header = el.querySelector('.accordion-item__header');
     const content = el.querySelector('.accordion-item__content');
+    if (!header && !content) return false;
     header.addEventListener('click', () => {
       if (header.classList.contains('is-active')) {
         content.classList.remove('is-active');

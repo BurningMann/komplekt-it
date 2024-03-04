@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru" class="custom-scrollbar">
+  @@include("../blocks/modules/head/head.html")
+  <body>
+    @@include("../blocks/modules/header/header.html")
+    <main class="base-page">
+      <section class="page-section start-contacts-srction">
+        <div class="start-contacts-srction__decor"></div>
+        <div class="start-contacts-srction__decor"></div>
+        <div class="start-contacts-srction__decor"></div>
+        <div class="container">
+          <div class="page-section__wrapper w-sidebar">
+            <div class="page-section__sidebar">
+              <div class="page-section__sidebar-container">
+                <h1 class="h2">
+                  Свяжитесь <br />
+                  с нами
+                </h1>
+                <div>Узнайте контакты для связи с нами и спросите то, что вас интересует</div>
+                <button class="button is-primary use-arrow netbook-hidden">
+                  Задать вопрос
+                  <div class="button__arrow">
+                    <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M26.041 10.7734L11.002 25.1335"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15.4824 10.7012L26.0401 10.7722L26.1161 20.8547"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="start-contacts-srction__img">
+              <img src="./img/contacts-img-2.jpg" alt="" class="fit-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+      @@include("../blocks/modules/contacts-section/contacts-section.html")
+      @@include("../blocks/modules/ques-form-section/ques-form-section.html")
+    </main>
+
+    @@include("../blocks/modules/footer/footer.html")
+    <!-- @@include("../blocks/modules/popups/popups.html") -->
+    @@include("../blocks/modules/scripts/scripts.html")
+  </body>
+</html>

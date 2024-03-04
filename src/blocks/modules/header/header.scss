@@ -6,6 +6,19 @@
   left: 0;
   z-index: 50;
   width: 100%;
+  transition: 0.3s;
+
+  &.is-fixed {
+    background: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &.is-white {
+    &:not(.is-fixed) {
+      font-size: #fff;
+    }
+  }
 
   &__logo {
     font-size: 3rem;

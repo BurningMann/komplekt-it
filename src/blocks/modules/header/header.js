@@ -1,3 +1,8 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+const header = document.querySelector('.header');
 const headerBurger = document.querySelector('.header__burger');
 const headerMobile = document.querySelector('.mobile-header-sidebar');
 const menuBg = document.querySelector('.header-menu-background');
@@ -15,6 +20,23 @@ headerBurger.addEventListener('click', () => {
 menuBg.addEventListener('click', () => {
   headerMobile.classList.remove('is-active');
   menuBg.classList.remove('is-active');
+});
+
+gsap.to('body', {
+  scrollTrigger: {
+    trigger: 'body',
+    start: 'top+=5px top ',
+    end: `bottom bottom`,
+    markers: true,
+    onEnter: () => {
+      console.log('onEnter');
+      header.classList.add('is-fixed');
+    },
+    onLeaveBack: () => {
+      console.log('onEnterBack');
+      header.classList.remove('is-fixed');
+    },
+  },
 });
 
 /* const siteSections = document.querySelectorAll('.navigate-section');
