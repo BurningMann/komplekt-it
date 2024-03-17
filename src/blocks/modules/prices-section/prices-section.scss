@@ -1,0 +1,92 @@
+.prices-section {
+  &__title-box {
+    display: grid;
+    grid-template-columns: 0.4fr 0.5fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+
+    @media screen and (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
+
+    .h2 {
+      line-height: 50%;
+    }
+  }
+
+  &__subtext {
+    max-width: 70rem;
+  }
+}
+
+.prices-table {
+  --table-gap: 3rem;
+
+  display: grid;
+  grid-template-columns: 0.33fr 0.66fr;
+  gap: var(--table-gap);
+
+  @media screen and (max-width: $lg) {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: $sm) {
+    --table-gap: 1rem;
+  }
+
+  &__box {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3rem;
+    padding: 4rem;
+    line-height: 120%;
+    background: #ffffff;
+
+    @media screen and (max-width: $sm) {
+      padding: 3rem 2rem;
+    }
+  }
+
+  &__box-title {
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__list-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__list-value {
+    flex-shrink: 0;
+  }
+
+  &__image {
+    height: 26rem;
+    border-radius: 4rem;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__row-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--table-gap);
+    height: 100%;
+
+    @media screen and (max-width: $lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__col-2 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--table-gap);
+  }
+}

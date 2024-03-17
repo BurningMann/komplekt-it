@@ -317,7 +317,7 @@ canvas {
   border-radius: 2rem;
   line-height: 130%;
   font-weight: 400;
-  height: 10rem;
+  height: 9.4rem;
   padding: 0 3.2rem;
   transition: 0.3s;
   color: var(--c-graphite);
@@ -503,7 +503,7 @@ canvas {
   &__placeholder {
     color: rgba(0, 0, 0, 0.6);
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 120%;
 
     a {
@@ -573,7 +573,7 @@ h1,
 h2,
 .h2 {
   font-size: 10rem;
-  line-height: 120%;
+  line-height: 110%;
   letter-spacing: -0.07em;
 
   @media screen and (max-width: $lg) {
@@ -582,6 +582,21 @@ h2,
 
   @media screen and (max-width: $sm) {
     font-size: 4rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 6.8rem;
+  line-height: 110%;
+  letter-spacing: -0.07em;
+
+  @media screen and (max-width: $lg) {
+    font-size: 5rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 3rem;
   }
 }
 
@@ -605,6 +620,16 @@ h2,
 .sub20 {
   font-size: 2rem;
   line-height: 110%;
+
+  @media screen and (max-width: $sm) {
+    font-size: 1.8rem;
+  }
+}
+
+.sub28 {
+  font-size: 2.8rem;
+  line-height: 110%;
+  font-weight: 300;
 
   @media screen and (max-width: $sm) {
     font-size: 1.8rem;
@@ -655,7 +680,7 @@ h2,
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 2rem;
 
   @media screen and (max-width: $lg) {
     gap: 1.6rem;
@@ -666,15 +691,17 @@ h2,
   }
 }
 
-/* ul {
+ul {
   padding-left: 2rem;
 
   li {
     list-style-type: disc;
-    font-weight: 500;
-    line-height: 140%;
+
+    &::marker {
+      color: var(--c-prime);
+    }
   }
-} */
+}
 
 .section-swiper-button {
   width: 5rem;
@@ -1120,6 +1147,22 @@ h2,
 
       path {
         stroke: #ffffff;
+      }
+    }
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 0.4rem;
+
+  &__item {
+    & + .breadcrumbs__item {
+      display: flex;
+      gap: 0.4rem;
+
+      &::before {
+        content: "/";
       }
     }
   }

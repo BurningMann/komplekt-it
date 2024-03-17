@@ -27,7 +27,7 @@ gsap.to('body', {
     trigger: 'body',
     start: 'top+=5px top ',
     end: `bottom bottom`,
-    markers: true,
+    /* markers: true, */
     onEnter: () => {
       console.log('onEnter');
       header.classList.add('is-fixed');
@@ -38,6 +38,10 @@ gsap.to('body', {
     },
   },
 });
+
+if (document.querySelectorAll('.company-start-window').length) {
+  header.classList.add('is-white');
+}
 
 /* const siteSections = document.querySelectorAll('.navigate-section');
 function setActiveLink(id) {

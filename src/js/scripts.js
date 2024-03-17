@@ -73,7 +73,6 @@ buttonsArrows.forEach((el) => {
     });
   });
 })();
-
 /* Проверка ширины экрана */
 /* function checkInnerWidth(width) {
   if (window.innerWidth <= width) {

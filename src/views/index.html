@@ -4,33 +4,33 @@
   <body>
     @@include("../blocks/modules/header/header.html")
     <main class="base-page">
-      <section class="page-section start-window">
-        <div class="container">
-          <h1 class="start-window__title">Комплект АйТи</h1>
-          <div class="start-window__wrapper">
-            <div class="start-window__decor"></div>
-            <div class="start-window__decor"></div>
-            <div class="start-window__decor"></div>
-            <div class="start-window__subtext">
-              Ведущая компания, предоставляющая высококачественные <br />
-              услуги в области web и мобильной разработки
-            </div>
-            <div class="start-window__image">
-              <img src="./img/start-image.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-      @@include("../blocks/modules/about-section/about-section.html")
-      @@include("../blocks/modules/services-accordion-section/services-accordion-section.html")
-      @@include("../blocks/modules/projects-section/projects-section.html")
-      @@include("../blocks/modules/clients-section/clients-section.html")
-      @@include("../blocks/modules/faq-section/faq-section.html")
-      @@include("../blocks/modules/request-form-section/request-form-section.html")
-    </main>
+      <style>
+        .site-links {
+          display: flex;
+          flex-direction: column;
+          padding: 4rem 0 6rem;
+        }
 
-    @@include("../blocks/modules/footer/footer.html")
-    <!-- @@include("../blocks/modules/popups/popups.html") -->
-    @@include("../blocks/modules/scripts/scripts.html")
+        .site-links__item {
+          font-weight: 500;
+          font-size: 2rem;
+          margin-bottom: 2rem;
+          text-transform: uppercase;
+          width: max-content;
+        }
+      </style>
+      <div class="container">
+        <div class="site-links">
+          <a href="./home.html" target="_blank" class="site-links__item">Главная</a>
+          <a href="./company.html" target="_blank" class="site-links__item">О компании</a>
+          <a href="./faq.html" target="_blank" class="site-links__item">FAQ</a>
+          <a href="./contacts.html" target="_blank" class="site-links__item">Контакты</a>
+          <a href="./services.html" target="_blank" class="site-links__item">Услуги</a>
+          <a href="./prices.html" target="_blank" class="site-links__item">Цены</a>
+          <a href="./tenders.html" target="_blank" class="site-links__item">Участие в тендерах</a>
+        </div>
+      </div>
+    </main>
+    @@include("../blocks/modules/footer/footer.html") @@include("../blocks/modules/scripts/scripts.html")
   </body>
 </html>

@@ -1,10 +1,18 @@
 <section class="page-section request-section">
   <div class="container">
-    <div class="page-section__wrapper">
+    <div class="page-section__wrapper w-sidebar">
       <div class="page-section__sidebar">
         <div class="section-title">
-          <div class="h2">Оставьте заявку</div>
+          <div class="h2">
+            Оставьте <br />
+            заявку
+          </div>
         </div>
+        <div class="request-section__img netbook-hidden">
+          <img src="./img/request-section-img.jpg" alt="" class="fit-cover" />
+        </div>
+      </div>
+      <div>
         <form action="#" class="callback-form">
           <label class="form-input is-required">
             <input type="text" class="input" placeholder=" " />
@@ -24,16 +32,16 @@
           </label>
           <label class="form-input is-textarea">
             <textarea class="input textarea" placeholder=" "></textarea>
-            <div class="form-input__placeholder">Описание запроса</div>
+            <div class="form-input__placeholder">Ваше сообщение</div>
           </label>
-          <label class="form-input">
+          <!-- <label class="form-input">
             <div class="file-input">
               <input type="file" placeholder="Приложить файл" />
               <div class="file-input__button button is-ghost">
                 <span class="file-input__plus">+</span> <span class="file-input__name">Приложить файл</span>
               </div>
             </div>
-          </label>
+          </label> -->
           <label class="checkbox-input">
             <input type="checkbox" name="privacy" />
             <div class="checkbox-input__check">
@@ -70,9 +78,6 @@
             </div>
           </button>
         </form>
-      </div>
-      <div class="request-section__img netbook-hidden">
-        <img src="./img/request-section-img.jpg" alt="" class="fit-cover" />
       </div>
     </div>
   </div>
