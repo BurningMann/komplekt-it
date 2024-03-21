@@ -45,10 +45,21 @@ body {
   font-weight: normal;
   font-style: normal;
   font-size: 1.6rem;
-  line-height: 120%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  line-height: 120%;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
 }
 
 .base-page {
@@ -629,7 +640,6 @@ h3,
 .sub28 {
   font-size: 2.8rem;
   line-height: 110%;
-  font-weight: 300;
 
   @media screen and (max-width: $sm) {
     font-size: 1.8rem;
@@ -638,6 +648,15 @@ h3,
 
 .page-section {
   margin-bottom: var(--section-magrgin);
+
+  &__sidebar {
+    &.w-space {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+  }
 
   &__wrapper {
     display: grid;
@@ -1054,7 +1073,9 @@ ul {
     overflow: auto;
 
     @media screen and (max-width: $lg) {
-      aspect-ratio: 4 / 2;
+      &:not(.error-image) {
+        aspect-ratio: 4 / 2;
+      }
     }
   }
 
@@ -1164,6 +1185,16 @@ ul {
       &::before {
         content: "/";
       }
+    }
+  }
+}
+
+.editor-content {
+  img {
+    border-radius: 4rem;
+
+    @media screen and (max-width: $sm) {
+      border-radius: 2rem;
     }
   }
 }

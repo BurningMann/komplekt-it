@@ -1,0 +1,156 @@
+.project-list-section {
+  &__title-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20rem;
+    margin-bottom: 5rem;
+
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .h2 {
+      line-height: 50%;
+    }
+  }
+
+  &__subtext {
+    max-width: 70rem;
+  }
+
+  &__wrapper {
+    height: 77rem;
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    gap: 3rem;
+    margin-bottom: var(--section-magrgin);
+
+    @media screen and (max-width: $lg) {
+      height: auto;
+      grid-template-columns: 1fr;
+    }
+
+    @media screen and (max-width: $sm) {
+      gap: 1rem;
+    }
+  }
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @media screen and (max-width: $sm) {
+    gap: 1rem;
+  }
+
+  &__row {
+    display: flex;
+    gap: 3rem;
+
+    @media screen and (max-width: $sm) {
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    @media screen and (min-width: $lg) {
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .project-list-card {
+        &:nth-child(1) {
+          width: 60%;
+        }
+        &:nth-child(2) {
+          width: 40%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $lg) {
+      .project-list-card {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.project-list-card {
+  height: 53rem;
+  overflow: hidden;
+  border-radius: 4rem;
+  position: relative;
+
+  @media screen and (max-width: $lg) {
+    height: auto;
+    aspect-ratio: 2 / 1.5;
+  }
+
+  @media screen and (max-width: $sm) {
+    border-radius: 3rem;
+    min-height: 30rem;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    background: #989898;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 6rem 3rem 3rem 3rem;
+  }
+
+  &__content-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: #ffffff;
+    max-width: 56rem;
+
+    @media screen and (max-width: $sm) {
+      max-width: calc(100% - 5rem);
+    }
+  }
+
+  .button__arrow {
+    position: absolute;
+    right: 3.2rem;
+    top: 3.2rem;
+    z-index: 5;
+    background: #ffffff;
+    opacity: 0;
+    transition: 0.3s;
+
+    @media screen and (max-width: $sm) {
+      right: 2rem;
+      top: 2rem;
+    }
+
+    path {
+      stroke: var(--c-graphite);
+    }
+  }
+
+  &:hover {
+    .project-list-card__content,
+    .button__arrow {
+      opacity: 1;
+    }
+  }
+}
