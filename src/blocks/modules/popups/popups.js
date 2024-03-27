@@ -8,7 +8,7 @@ popupButtons.forEach((el) => {
     const popup = document.querySelector(`.${popupSlug}_popup`);
     if (popup) {
       popup.classList.add('is-active');
-      window.stopLenis();
+      window.hideScrollBar();
     }
   });
 });
@@ -19,14 +19,32 @@ closePopup.forEach((el) => {
     const popup = el.closest('.popup');
     if (popup) {
       popup.classList.remove('is-active');
-      window.startLenis();
+      window.showScrollBar();
     }
   });
 });
 
 document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('popup')) {
+  if (e.target.classList.contains('popup') && !e.target.classList.contains('success_popup')) {
     e.target.classList.remove('is-active');
-    window.startLenis();
+    window.showScrollBar();
   }
 });
+
+let toastTimeout = null;
+window.activateSuccessPopup = (text, delay) => {
+  const popup = document.querySelector('.success_popup');
+  if (!popup) return false;
+
+  const toastText = popup.querySelector('.success-popup-message');
+  toastText.innerHTML = text;
+  popup.classList.add('is-active');
+
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    popup.classList.remove('is-active');
+    setTimeout(() => {
+      toastText.innerHTML = '';
+    }, 300);
+  }, delay);
+};

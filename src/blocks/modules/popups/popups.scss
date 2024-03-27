@@ -21,12 +21,12 @@
   &__wrapper {
     position: relative;
     width: 100%;
-    max-width: 58rem;
+    max-width: 70rem;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 2rem;
     overflow: hidden;
-    padding: 6rem 2rem;
+    padding: 6rem;
 
     @media screen and (max-width: $lg) {
       padding: 6rem 2rem 2rem;
@@ -42,9 +42,11 @@
   }
 
   &__title {
-    color: var(--c-graphite);
-    flex-shrink: 0;
     margin-bottom: 4rem;
+
+    @media screen and (max-width: $lg) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__content {
@@ -52,8 +54,18 @@
   }
 
   &__form-container {
-    width: 100%;
-    max-width: 28rem;
-    margin: 0 auto;
   }
+
+  &.success_popup {
+    .popup__wrapper {
+      padding: 4rem 2rem;
+      max-width: 40rem;
+      min-height: 10rem;
+    }
+  }
+}
+
+.success-popup-message {
+  font-size: 2rem;
+  text-align: center;
 }

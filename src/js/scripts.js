@@ -73,94 +73,60 @@ buttonsArrows.forEach((el) => {
     });
   });
 })();
-/* Проверка ширины экрана */
-/* function checkInnerWidth(width) {
-  if (window.innerWidth <= width) {
-    return true;
-  } else {
-    return false;
-  }
-} */
 
-/* POPUPS */
-/* $('[data-popup]').click(function (e) {
-  e.preventDefault();
-  let popup = $(this).data('popup');
-  $(`.${popup}_popup`).fadeIn();
-  $('body,html').addClass('noskroll');
-});
+/* Start phone mask */
 
-$('.popup__close').click(function () {
-  let popup = $(this).closest('.popup');
-  $(popup).fadeOut();
-  $('body,html').removeClass('noskroll');
-}); */
+import { MaskInput } from 'maska';
 
-/* FORM ERRORS */
-/* 
-const contactForm = document.querySelectorAll('.contacts-form');
-contactForm.forEach((el) => {
-  el.addEventListener('submit', function (event) {
-    let errors = 0;
+(() => {
+  const maskList = [
+    {
+      name: 'Russia',
+      code: '+7',
+      iso: 'RU',
+      flag: 'https://cdn.kcak11.com/CountryFlags/countries/ru.svg',
+      mask: '(###)###-##-##',
+    },
+  ];
 
-    const fields = el.querySelectorAll('.input');
-    fields.forEach((field) => {
-      const error = field.closest('.form-field-box').querySelector('.field-error');
-      const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      if (field.classList.contains('is-required') && !field.value) {
-        errors++;
-        field.classList.add('is-error');
-        if (error) {
-          error.classList.add('is-visible');
-          error.innerHTML = 'Field is required';
-        }
-      } else if (field.classList.contains('is-email') && !field.value.match(mailformat)) {
-        errors++;
-        field.classList.add('is-error');
-        if (error) {
-          error.classList.add('is-visible');
-          error.innerHTML = 'The field is filled incorrectly';
-        }
+  const phoneInputs = document.querySelectorAll('.phone-input');
+
+  phoneInputs.forEach((el) => {
+    const input = el.querySelector('.input');
+    let mask = null;
+    function setMask(maskItem) {
+      mask = new MaskInput(input, {
+        mask: `${maskItem.code}${maskItem.mask}`,
+        eager: true,
+        onMaska: (detail) => {
+          if (detail.completed) {
+            el.classList.add('is-valid');
+          } else {
+            el.classList.remove('is-valid');
+          }
+        },
+      });
+    }
+    setMask(maskList[0]);
+
+    input.addEventListener('focus', () => {
+      if (!input.value) {
+        input.value = '+7(';
       }
     });
-
-    if (errors) {
-      event.preventDefault();
-      return false;
-    }
   });
-});
+})();
 
-const fields = document.querySelectorAll('form .input');
-fields.forEach((el) => {
-  const error = el.closest('.form-field-box').querySelector('.field-error');
-  el.addEventListener('input', function (event) {
-    el.classList.remove('is-error');
-    if (error) {
-      error.classList.remove('is-visible');
-      error.innerHTML = '';
-    }
-  });
-}); */
+window.showScrollBar = () => {
+  document.querySelector('html').classList.remove('noskroll');
+  document.querySelector('body').classList.remove('noskroll');
+};
 
-/* Lazy load */
-/* var observer = lozad('[data-lazysrc]', {
-  threshold: 0.1,
-  enableAutoReload: true,
-  load: function(el) {
-    el.src = el.getAttribute("data-lazysrc");
-    // el.srcset = el.getAttribute("data-lazysrc");
-    el.onload = function() {
-      $(el).addClass("load")
-    }
-  }
-})
-observer.observe()
+window.hideScrollBar = () => {
+  document.querySelector('html').classList.add('noskroll');
+  document.querySelector('body').classList.add('noskroll');
+};
 
-var pictureObserver = lozad('.lozad', {
-  threshold: 0.1
-})
-pictureObserver.observe() */
 /* gsap.registerPlugin(ScrollTrigger);
 
 window.startLenis = () => {
@@ -207,86 +173,6 @@ navLinks.forEach((el) => {
 /* Fancybox.bind('[data-fancybox]', {
   Hash: false,
 }); */
-
-/* Start phone mask */
-
-/* import { MaskInput } from 'maska';
-
-(() => {
-  const maskList = [
-    {
-      name: 'Russia',
-      code: '+7',
-      iso: 'RU',
-      flag: 'https://cdn.kcak11.com/CountryFlags/countries/ru.svg',
-      mask: '(###)###-##-##',
-    },
-    {
-      name: 'Belarus',
-      code: '+375',
-      iso: 'BY',
-      flag: 'https://cdn.kcak11.com/CountryFlags/countries/by.svg',
-      mask: '(##)###-##-##',
-    },
-  ];
-
-  const phoneInputs = document.querySelectorAll('.phone-input');
-
-  phoneInputs.forEach((el) => {
-    const input = el.querySelector('.input');
-    const dropdown = el.querySelector('.phone-input__mask-switch-dropdown');
-    const current = el.querySelector('.phone-input__mask-switch-current');
-    let mask = null;
-    function setMask(maskItem) {
-      mask = new MaskInput(input, {
-        mask: `${maskItem.code}${maskItem.mask}`,
-        eager: true,
-        onMaska: (detail) => {
-          if (detail.completed) {
-            el.classList.add('is-valid');
-          } else {
-            el.classList.remove('is-valid');
-          }
-        },
-      });
-    }
-    setMask(maskList[0]);
-
-    maskList.forEach((item) => {
-      var div = document.createElement('div');
-      div.innerHTML = `<div class="phone-input__dropdown-item"><img src="${item.flag}" class="phone-input__main-icon"> ${item.name} ${item.code}</div>`;
-      dropdown.appendChild(div);
-
-      div.addEventListener('click', (e) => {
-        current.innerHTML = `<img src="${item.flag}" class="phone-input__main-icon">`;
-        input.value = '+';
-        mask.destroy();
-        setMask(item);
-      });
-    });
-    current.innerHTML = `<img src="${maskList[0].flag}" class="phone-input__main-icon">`;
-
-    current.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdown.classList.toggle('is-active');
-    });
-
-    input.addEventListener('focus', () => {
-      if (!input.value) {
-        input.value = '+';
-      }
-    });
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.phone-input__mask-switch')) {
-      document
-        .querySelectorAll('.phone-input__mask-switch-dropdown.is-active')
-        .forEach((el) => el.classList.remove('is-active'));
-    }
-  });
-})(); */
 
 /* file input */
 

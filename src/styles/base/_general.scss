@@ -319,6 +319,16 @@ canvas {
       }
     }
   }
+
+  &.is-error {
+    .input {
+      border-color: red;
+    }
+
+    .checkbox-input__check {
+      border-color: red;
+    }
+  }
 }
 
 .input {
